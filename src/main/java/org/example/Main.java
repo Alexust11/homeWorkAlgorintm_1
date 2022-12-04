@@ -22,6 +22,17 @@ public class Main {
         System.out.println("_____задача 3:_________");
         System.out.println("Переписан элемент по задачи 3: "+list.set(3,"новый элемент"));
         list.getAll();
+
+        System.out.println("_____задача 4:_________");
+        System.out.println(list.remove("Привет3"));
+        list.getAll();
+
+        System.out.println("_____задача 5:_________");
+        System.out.println(list.remove(6));
+        list.getAll();
+
+
+
     }
 
 

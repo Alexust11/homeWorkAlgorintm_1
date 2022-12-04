@@ -15,14 +15,14 @@ public class StringListImpl implements StringList {
 
     @Override
     public String add(int index, String item) {
-        if (index > stringList.size()) {throw new IllegalArgumentException("Индекс превышает зармер массива"); }
+        if (index > stringList.size()) {throw new IllegalArgumentException("Индекс превышает размер массива"); }
         else  stringList.add(index, item);
         return stringList.get(index);
     }
 
     @Override
     public String set(int index, String item) {
-        if (index > stringList.size()) {throw new IllegalArgumentException("Индекс превышает зармер массива"); } else
+        if (index > stringList.size()) {throw new IllegalArgumentException("Индекс превышает размер массива"); } else
             stringList.set(index, item);
         return stringList.get(index);
 
@@ -30,12 +30,19 @@ public class StringListImpl implements StringList {
 
     @Override
     public String remove(String item) {
-      return null;
+
+        if (!stringList.contains(item)) {throw new IllegalArgumentException("Такого элемента нет"); }
+        int count=stringList.indexOf(item);
+        stringList.remove(count);
+      return "удален элемент "+item;
         }
 
     @Override
     public String remove(int index) {
-        return null;
+        if (index > stringList.size()) {throw new IllegalArgumentException("Индекс превышает размер массива");}
+        String str = stringList.get(index);
+        stringList.remove(index);
+        return "Удален элемент -"+str;
     }
 
     @Override
